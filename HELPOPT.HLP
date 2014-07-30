@@ -1,0 +1,19 @@
+ 2HELP OPTIONS0
+
+ The following topics are available:
+
+ .h 2CONFIG0      -- Explains all the configuration commands and options
+ .h 2FILES0       -- Explains the transferring of files.
+ .h 2GROUP0       -- Explains the use of groups.
+ .h 2HALLWAY0     -- Explains moving around in halls.
+ .h 2INTRO0       -- Introduction to this DragCit.
+ .h 2LOGIN0       -- Explains logging in.
+ .h 2MESSAGE0     -- Lists all message entry commands.
+ .h 2ROOM0        -- Explains moving around in and creating rooms.
+ .h 2NETWORK0     -- Explains how to use the DragCit network.
+ .h 2NODES0       -- List of all the local DragCits
+ .h 2ANSI0        -- Explains the use of the ANSI terminal support.
+ .h 2SYSOP0       -- Explains sysop commands.
+ .h 2AIDE0        -- Explains aide commands.
+ .h 2SPECIAL0     -- Explains anything that didn't go anywhere else.
+

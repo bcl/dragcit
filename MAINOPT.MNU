@@ -1,0 +1,23 @@
+ 2Single-Key Commands:0
+ 3B0>ypass          3C0>hat
+ 3D0>ownload        3E0>nter message
+ 3F0>orward         3G0>oto
+ 3H0>elp!           3I0>ntro
+ 3J0>ump Back       3K0>nown rooms
+ 3L0>ogin           3N0>ew
+ 3O0>ld             3R0>everse
+ 3T0>erminate       3U0>pload
+ 3X0>clude Room
+ 3+0> -- next room  3-0> -- previous room
+ 3>0> -- next hall  3<0> -- previous hall
+ 3?0> -- this menu
+ 
+ 2Multi-Key Commands:0
+ 3.B0>ypass         3.E0>nter
+ 3.G0>oto           3.H0>elp
+ 3.K0>nown          3.L0>ogin
+ 3.R0>ead           3.T0>erminate
+ 3.X0>pert on/off
+ 
+ 3.H?0 for extended help
+

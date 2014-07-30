@@ -1,0 +1,547 @@
+/************************************************************************/
+/*                                                                      */
+/*              Configuration file for Citadel 3.11.XX                  */
+/*            (MsDos/Turbo C version, Dragon's revision)                */
+/*                                                                      */
+/*      This is NOT a C program.  This is an installation file for      */
+/*      Citadel that determines system paramters.  This file is read    */
+/*      automatically when needed by ctdl.exe.  Deleting etc.dat        */
+/*      before running Citadel will force Citadel to reconfigure.       */
+/*                                                                      */
+/*      To install Citadel, please walk through and follow the          */
+/*      instructions before each directive.                             */
+/*      Good luck.  You can always try again or call Dragon's Caverns   */
+/*      at 546-0994 (8N1, 3/12/24) for help.                            */
+/*                                                                      */
+/************************************************************************/
+
+/************************************************************************/
+/*  conventions:                                                        */
+/*                                                                      */
+/*      Numeric parameters, except for the attributes are in Decimal.   */
+/*                                                                      */
+/*      String parameters can be up to 19 characters in length, and may */
+/*  contain spaces if they are quoted in double (") quotes.             */
+/*                                                                      */
+/*      Any String in double qoutes should substitute / or \\ for  \    */
+/*  this is very importiant as a single \ indicates an escape code      */
+/*                                                                      */
+/************************************************************************/
+
+/************************************************************************/
+/* ##### kill                                                           */
+/* if kill is 1, users can kill their own messages. And only their own. */
+/************************************************************************/
+#KILL 1
+
+/************************************************************************/
+/* ##### subhubs                                                        */
+/* if subhubs is 0, window rooms are treated the same as on Stonehenge  */
+/* if subhubs is 1, the following changes happen.                       */
+/*   1) if Lobby> is not in a hall, it does not enter G)oto loop.       */
+/*       if there are no Newrooms and no Windows, system defaults to    */
+/*       first window in hallway.                                       */
+/*   2) if there are no newrooms, hitting 'G' will take user to first   */
+/*       window in hall, hitting 'G' again will take you to the second  */
+/*       window. Citadel will cycle back to the first window again.     */
+/************************************************************************/
+#SUBHUBS 1
+
+/************************************************************************/
+/* ##### loginstats                                                     */
+/* if loginstats is 1, the following statistics are displayed at login. */
+/*  a) login name                   b) userlog position                 */
+/*  c) caller #                     d) #people on since last call       */
+/*  e) #calls since last call       f) #new messages                    */
+/************************************************************************/
+#LOGINSTATS 1
+
+/************************************************************************/
+/* ##### roomtell                                                       */
+/* roomtell activates room descriptions. the descriptions are found     */
+/* in #roompath.                                                        */
+/************************************************************************/
+#ROOMTELL 1
+
+/************************************************************************/
+/* The following parameters determine the size of your system           */
+/************************************************************************/
+
+/************************************************************************/
+/* ##### messagek                                                       */
+/* messagek defines (in "K") how many kilobytes of message space        */
+/* you wish to use, typically, 150 works well on floppy machines, 512   */
+/* works well for hard disk systems.  minimum of 1 and a maximum of 1512*/
+/************************************************************************/
+#MESSAGEK       512    /* substitute your value for 512 if you wish     */
+
+/************************************************************************/
+/* ##### NMESSAGES                                                      */
+/* sets up the maximum number of messages that the system will be       */ 
+/* expected to contain at any one time.  5 x messagek is a good guess   */ 
+/************************************************************************/ 
+#NMESSAGES      2200    /* substitute your value for 2200 if you wish   */
+
+/************************************************************************/
+/* ##### MAXTEXT                                                        */
+/* MAXTEXT defines the maximum size of a single message.  Values between*/
+/* 2048 and 8192 are reasonable and work well.  Typically, this is about*/
+/* 8192.      minimum 128       maximum 16384                           */
+/************************************************************************/
+#MAXTEXT        8192     /* substitute your value for 8192 if you wish  */
+
+/************************************************************************/
+/* ##### MAXLOGTAB                                                      */
+/* MAXLOGTAB defines (in decimal) how many users can be stored in the   */
+/* userlog at one time.  Each userlog entry takes up about 500 bytes    */
+/* on disk and 10 bytes in RAM.  Values between 64 and 256 work well    */
+/* in most cases.                                                       */
+/************************************************************************/
+#MAXLOGTAB     128     /* substitute your value for 128 if you wish     */
+
+/************************************************************************/
+/* The following  parameters define which drive and path various files  */
+/* live in.                                                             */
+/************************************************************************/
+
+/************************************************************************/
+/* ##### homepath                                                       */
+/* homepath decides which drive and subdirectory system files will      */
+/* be found in.     defaults  --   Floppy = B:\   Hard disk = C:\CIT    */
+/************************************************************************/
+#HOMEPATH       C:\CIT   
+                    /* substitute your value for the defaults if needed */
+
+/************************************************************************/
+/* ##### msgpath                                                        */
+/* msgpath defines which drive and subdirectory the message file will   */
+/* be found in    defaults  --   Floppy = B:\   Hard disk = C:\CIT      */
+/************************************************************************/
+#MSGPATH        C:\CIT  
+                    /* substitute your value for the defaults if needed */
+
+/************************************************************************/
+/* ##### helppath                                                       */
+/* helppath defines which drive and subdirectory the help files live in.*/
+/*     Defaults  --   Floppy = A:\HELP   Hard disk = C:\CIT\HELP        */
+/************************************************************************/
+#HELPPATH       C:\CIT\HELP    
+                    /* substitute your value for the defaults if needed */
+
+/************************************************************************/
+/* ##### aplication                                                     */
+/*aplication defines which drive and subdirectory the applications      */
+/* files live in.                                                       */
+/*     Defaults  --   Floppy = A:\HELP   Hard disk = C:\CIT\APPLIC      */
+/************************************************************************/
+#APPLICATION    C:\CIT\APLIC
+                    /* substitute your value for the defaults if needed */
+
+/************************************************************************/
+/* ##### temppath                                                       */
+/* sets the disk and subdirectory to use for temorary networking files  */
+/* defaults -- Floppy = A:\TEMP(or ramdisk if used) Hard disk = C:\TEMP */
+/************************************************************************/
+#TEMPPATH      C:\CIT\TEMP
+
+/************************************************************************/
+/* ##### roompath                                                       */
+/* roompath defines which drive and subdirectory the room descriptions  */
+/* are to be found.                                                     */
+/*     Defaults  --   Floppy = A:\ROOMS  Hard disk = C:\CIT\ROOMS       */
+/************************************************************************/
+#ROOMPATH      C:\CIT\ROOMS
+                    /* substitute your value for the defaults if needed */
+
+/************************************************************************/
+/* The next six parameters do hardware-level things.                    */
+/************************************************************************/
+
+/************************************************************************/
+/* ##### attr        IN HEX!                                            */
+/* attr is the video-display color to use, bottom line is inverse       */
+/* wattr is the video-display color for the window                      */
+/* cattr is the color of what console types in chat                     */
+/* uttr  is the color of underlined text                                */
+/* battr is the boarder attribute (Color systems only)                  */
+/* (NOTE: the color.exe program can be used to help you find colors you */
+/*        like)                                                         */
+/************************************************************************/
+#ATTR            10     /* substitue your value for 10 if you wish      */
+#WATTR           70     /* substitue your value for 70 if you wish      */
+#CATTR           0A     /* substitue your value for 0A if you wish      */
+#UTTR            01     /* substitue your value for 01 if you wish      */
+#BATTR           0      /* substitue your value for 0 if you wish       */
+
+/************************************************************************/
+/* ##### bios                                                           */
+/* If your system experiances 'snow' with some programs you will want to*/
+/* set this to 1. (It tells Citadel to use the BIOS for screen writes or*/
+/* to write directly to vido ram)                                       */
+/************************************************************************/
+#BIOS            0
+
+/************************************************************************/
+/* ##### mdata                                                          */
+/* mdata defines the modem data port.  for the IBM PC, use:             */
+/*      1       for  port 1                                             */
+/*      2       for  port 2                                             */
+/************************************************************************/
+#MDATA          1       /* 1   for port one or 2   for port two         */
+
+/************************************************************************/
+/* ##### dumb_modem                                                     */
+/* dumb_modem gives alternate baud rate detection methods.              */
+/* 0 the Citadel looks for Numeric response codes from a Hayes          */
+/*   Compatable modem.                                                  */
+/* 1 users must type a plurality of carriage returns to determine what  */
+/*   the baud rate is.                                                  */
+/* 2 looks for the HS line on the RI line, you need a special           */
+/*   cable for this trick. It is acurate however.                       */
+/* 3 is for verbose response set.                                       */
+/* 4 fixes the system at the INIT_BAUD                                  */
+/*                                                                      */
+/* 0 and 3 handle 9600, 1 handles 2400.                                 */
+/*                                                                      */
+/* INIT_BAUD tells Citadel what baud rate to init the modem at.         */
+/* 0 = 300, 1 = 1200, 2 = 2400, 3 = 4800, 4 = 9600                      */
+/************************************************************************/
+#DUMB_MODEM     0       /* substitue your value for 0 if you wish       */
+#INIT_BAUD      2
+
+/************************************************************************/
+/* ##### modsetup                                                       */
+/* sets the modem initialization string.  for hayes 300/1200 modems, the*/
+/* string 'X1' should be added after the AT command.                    */
+/*                                                                      */
+/************************************************************************/
+#MODSETUP       "AT V0 M1 S0=1"
+
+/************************************************************************/
+/* Dial out init string                                                 */
+/************************************************************************/
+#DIAL_INIT         "AT M0 V1 S0=0"
+
+/************************************************************************/
+/* Dial prefix                                                          */
+/************************************************************************/
+#DIAL_PREF         "ATDT"
+
+/************************************************************************/
+/* ##### offhook                                                        */
+/* if offhook is 1, modem goes off-hook at console login (AT M0 H1)     */
+/************************************************************************/
+#OFFHOOK           0
+
+/************************************************************************/
+/* ##### printer                                                        */
+/* printer defines the file output is copied to when you press the      */
+/* alt-p key.  This can be any valid dos file or device name            */
+/************************************************************************/
+#PRINTER        C:\CIT\PRINTER.OUT
+                        /* substitute your printer device/file for PRN  */
+
+/************************************************************************/
+/* the following refer to default configuration information             */
+/************************************************************************/
+
+/************************************************************************/
+/* ##### width                                                          */
+/* default screen width for users who are not logged in.                */
+/************************************************************************/
+#WIDTH          79
+
+/************************************************************************/
+/* ##### nulls                                                          */
+/* default number of nulls for users who are not logged in.             */
+/************************************************************************/
+#NULLS          0
+
+/************************************************************************/
+/* ##### uppercase                                                      */
+/* default uppercase-only flag for users who are not logged in.         */
+/************************************************************************/
+#UPPERCASE      0
+
+/************************************************************************/
+/* ##### linefeeds                                                      */
+/* default linefeeds flag for users who are not logged in.              */
+/************************************************************************/
+#LINEFEEDS      1
+
+/************************************************************************/
+/* ##### tabs                                                           */
+/* default tabs flag for users who are not logged in.                   */
+/************************************************************************/
+#TABS           0
+
+/************************************************************************/
+/* ##### oldcount     (NOT IN USE)                                      */
+/* oldcount determines how many messages are new to first-time callers. */
+/* a value of zero makes all messages new to first-time callers.        */
+/************************************************************************/
+#OLDCOUNT       0
+
+/************************************************************************/
+/* ##### nodename                                                       */
+/* nodename is the name of the system.  It is printed when someone calls*/
+/* up and when the Read Status command is used.  In the future,         */
+/* networked messages will have the nodename in the header.             */
+/* ##### noderegion                                                     */
+/* this is the region your bord is in, used for networking              */
+/************************************************************************/
+#NODENAME       "nul"
+                                   /* substitute your nodename for "nul"*/
+#NODEREGION     "Seattle"
+                                 /* substitute your region for "seattle"*/
+
+/************************************************************************/
+/* The following nine parameters determine security features of your    */
+/* installation.                                                        */
+/************************************************************************/
+
+/************************************************************************/
+/* ##### f6password                                                     */
+/* a password to lock the console, leave blank if you want none.        */
+/* a password of dissabled will lock them w/o giving access             */
+/************************************************************************/
+#F6PASSWORD     ""
+
+/************************************************************************/
+/* ##### enterok                                                        */
+/* enterok is 1 if un-logged users may use any enter commands           */
+/************************************************************************/
+#ENTEROK        0      /* substitue your value for 0 if you wish        */
+
+/************************************************************************/
+/* ##### readok                                                         */
+/* readok is 1 if un-logged users may use any read commands.            */
+/************************************************************************/
+#READOK         1      /* substitue your value for 1 if you wish        */
+
+/************************************************************************/
+/* ##### roomok                                                         */
+/* roomok is 1 if non-aide users may create rooms                       */
+/************************************************************************/
+#ROOMOK         1      /* substitue your value for 1 if you wish        */
+
+/************************************************************************/
+/* ##### forcelogin                                                     */
+/* forcelogin is 1 if you want to automatically ask for initials and    */
+/* password when someone calls up.                                      */
+/************************************************************************/
+#FORCELOGIN     1      /* substitue your value for 0 if you wish        */
+
+/************************************************************************/
+/* ##### nopwecho                                                       */
+/* nopwecho will disable the echo of passwords to the USER (the sysop   */
+/* never sees passwords regardless) if it is non-zero.  Passwords and   */
+/* initials must then be changed and (initially) set up using a double  */
+/* entry confirmation scheme.                                           */
+/************************************************************************/
+#NOPWECHO      48       /* substitue your value for 0 if you wish       */
+
+/************************************************************************/
+/* ##### user                                                           */
+/* you may optionally define default attributes for new users and users */
+/* who are not logged in.  this is useful for verified systems and      */
+/* strange accounting schemes.                                          */
+/* there are three keywords that may be used:                           */
+/*  PROBLEM_USER    -- Problem user attribute is the default            */
+/*  PERMANENT       -- Permanent log entry is the default               */
+/*  NO_ACCOUNTING   -- Accounting is disabled by default                */
+/*  NETWORK         -- Network privileged user by default               */
+/*  NO_MAIL         -- Set all new users to not be able to enter mail   */
+/*  SYSOP           -- All new users are sysops. Very bad!              */
+/*  AIDE            -- All new users are aide. Very bad!                */
+/************************************************************************/
+#USER   NETWORK
+                        /* place your value here if you wish            */
+
+/************************************************************************/
+/* ##### trap                                                           */
+/* controls what events are trapped, the following are valid parameters,*/
+/* more than one may be specified:                                      */
+/*  ALL             -- All events are logged.                           */
+/*  CARRIER         -- Carrier detect and carrier loss are logged.      */
+/*  LOGIN           -- Logins, logouts, and new users are logged.       */
+/*  NEWROOM         -- New room creations are logged.                   */
+/*  PROBLEM_USER    -- Problem user messages are logged.                */
+/*  CHAT            -- Chat requests are logged.                        */
+/*  PASSWORD        -- Password changes are logged.                     */
+/*  AIDE            -- Aide functions are logged.                       */
+/*  SYSOP           -- Sysop functions are logged.                      */
+/*  UPLOAD          -- All file uploads are logged.                     */
+/*  DOWNLOAD        -- All file downloads are logged.                   */
+/*  ERROR           -- Internal system errors are logged.               */
+/*  NETWORK         -- Network events are logged.                       */
+/*  ACCOUNT         -- Accounting information is logged.                */
+/*  APPLIC          -- Applications executed are logged.                */
+/*  note: placing a ! before an item Disables that item.                */
+/*  I.E.  ALL !CHAT    would trap all events except chat requests       */
+/************************************************************************/
+#TRAP           ALL
+                            /* substitute your own events if you wish   */
+
+/************************************************************************/
+/* ##### trap_file                                                      */
+/* the trap_file is where system auditing and important events are      */
+/* logged.  this can be any valid DOS file or device name.  log info    */
+/* will be appended to this file.                                       */
+/************************************************************************/
+#TRAP_FILE      C:\CIT\trap.fbi 
+                            /* substitute your value if you wish        */
+
+/************************************************************************/
+/* lets users read limited access userlog                               */
+/************************************************************************/
+#READLLOG          1
+
+/************************************************************************/
+/* #### aidehall                                                        */
+/* 0= only sysops can use .ah .aw (hall changing commands)              */
+/* 1= aides to!                                                         */
+/************************************************************************/
+#AIDEHALL          0                                                      
+
+/************************************************************************/
+/* #### moderate                                                        */
+/* 0= only sysops can see moderated messages                            */
+/* 1= aides to!                                                         */
+/************************************************************************/
+#MODERATE          0                                                      
+
+/************************************************************************/
+/* #### private                                                         */
+/* 0 open                                                               */
+/* 1 message to sysop                                                   */
+/* 2 message to sysop drop carrier                                      */
+/* 3 enter user non-verified and ask name number surname(if configed)   */
+/* 4 same as 3 with drop carrier                                        */
+/* 5 newuserapp                                                         */
+/* 6 newuserapp drop carrier                                            */
+/* 7 enter user non-verified and newuserapp                             */
+/* 8 same as 7 with drop carrier                                        */
+/* 9 closed, tells them so in a blurb "closesys.blb"                    */
+/* 10 same as 9 with drop carrier.                                      */
+/************************************************************************/
+#PRIVATE           0
+
+/************************************************************************/
+/* #### messageroom                                                     */
+/*   Number of messages that can be entered in a room on one call.      */
+/************************************************************************/
+#MESSAGE_ROOM       5                                                     
+
+/************************************************************************/
+/* #### newuserapp                                                      */
+/* name off the application that will be run for new users (if set in   */
+/* #private)                                                            */
+/************************************************************************/
+#NEWUSERAPP     "newuser"
+
+
+/************************************************************************/
+/*  the following seven parameters set up accounting information        */
+/************************************************************************/
+
+/************************************************************************/
+/* ##### unlogtimeout                                                   */
+/* sets the amount of time (in minutes) an un-logged in user may be idle*/
+/* before being logged out.                                             */
+/************************************************************************/
+#UNLOGTIMEOUT   1
+
+/************************************************************************/
+/* ##### timeout                                                        */
+/* sets the amount of time (in minutes) a logged in user may be idle    */
+/* before being logged out.                                             */
+/************************************************************************/
+#TIMEOUT        6
+
+/************************************************************************/
+/* ##### accounting                                                     */
+/* if non-zero, will enable accounting functions.  Otherwise, they are  */
+/* disabled.                                                            */
+/************************************************************************/
+#ACCOUNTING     1
+
+/************************************************************************/
+/* ##### unloggedbalance                                                */
+/* this variable will be the balance that users who are not logged in   */
+/* or are new users will get.                                           */
+/************************************************************************/
+#UNLOGGEDBALANCE    5.0
+
+/************************************************************************/
+/* ##### MAX_WARN                                                       */
+/* MAX_WARN is the maximum number of warnings (related to excessive     */
+/* resource usage) that a user may receive before being booted off.     */
+/************************************************************************/
+#MAX_WARN       4
+
+/************************************************************************/
+/* #### cost1200  amount to multiply input and output costs by at 1200  */
+/************************************************************************/
+#COST1200          1.0
+
+/************************************************************************/
+/* #### cost2400  amount to multiply input and output costs by at 2400  */
+/************************************************************************/
+#COST2400          1.0
+
+/************************************************************************/
+/* #### maxbalance                                                      */
+/* Maximum balance that users may accrue                                */
+/************************************************************************/
+#MAXBALANCE       1000000.0
+
+/************************************************************************/
+/* #### newbal                                                          */
+/* Amount for new user                                                  */
+/************************************************************************/
+#NEWBAL            60.0
+
+
+/************************************************************************/
+/*  The next few items are odds and ends left over..                    */
+/************************************************************************/
+
+/************************************************************************/
+/*  Time the system will wait before executing an event                 */
+/************************************************************************/
+#IDLE_WAIT         3
+
+/************************************************************************/
+/* The max number of files Citadel will see in a directory.             */
+/* (NOTE: this is also the max number of rooms you can network!)        */
+/************************************************************************/
+#MAXFILES        100
+
+/************************************************************************/
+/* These are the format the time/date will be displayed on your system  */
+/* The DATESTAMP is used for messages, and the other is for reading     */
+/* verbose and the read status, ext                                     */
+/* (NOTE: See the STRFTIME.DOC for specifics on the format)             */
+/************************************************************************/
+#DATESTAMP       "%A %D%b%y"
+#VDATESTAMP      "%A %D%b%y %I:%M %p (%Z)"
+
+/************************************************************************/
+/* These are keywords to enable some of the... stranger... features of  */
+/* DragCit. Most serious boards should avoid them.                      */
+/*  MSG_NYMS      Allow aides to change what messages are called (.AN)  */
+/*  BORDER_LINES  Allow users to enter borderlines                      */
+/*  TITLES        Enable titles for users                               */
+/*  SURNAMES      Enable surnames for users                             */
+/*  NET_TITLES    Show titles for messages from the net                 */
+/*  NET_SURNAMES  Show surnames for messages from the net               */
+/*  ENTER_TITLES  Allow the users to enter their title and surname      */
+/************************************************************************/
+#TWIT_FEATURES  TITLES NET_TITLES SURNAMES NET_SURNAMES ENTER_TITLES
+
+/************************************************************************/
+/* #alldone must appear at the end of the file                          */
+/************************************************************************/
+#ALLDONE
+

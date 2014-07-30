@@ -1,0 +1,142 @@
+# -----------------------------------------------------------------------
+#   Makefile for MSDOS Citadel v3.11.xxd, for use with NDMAKE
+# -----------------------------------------------------------------------
+
+# -----------------------------------------------------------------------
+#   ALL JOBS:
+#
+all:    ctdl.exe
+# -----------------------------------------------------------------------
+
+# -----------------------------------------------------------------------
+#   set up compiler (Turbo C)
+#
+CC    = tcc
+.c.obj:; tcc $(CFLAGS) -c $*.c
+# -----------------------------------------------------------------------
+
+# -----------------------------------------------------------------------
+# Option: Serial package to use (CSER || CSERL)
+# NOTE: CSER.ASM still has problems, use CSERL!
+#
+SERIAL=CSERL
+# -----------------------------------------------------------------------
+
+# -----------------------------------------------------------------------
+# Options: (linker)
+#
+LFLAGS= /stack:12288 /NOIGNORECASE /E /F /SEGMENTS:256
+# -----------------------------------------------------------------------
+
+# -----------------------------------------------------------------------
+# Options: (compile time and Defines)
+CFLAGS= -ml -N -O -d -G -w -Z -D$(SERIAL) -DNETWORK
+#
+#       -DDRAGON
+#       user abuse: ctdl.c dragon.c modem.c 
+#
+#       -DALPHA_TEST
+#       Enable ALPHA-test debugging code
+#
+#       -DBETA_TEST
+#       Enable BETA-test debugging code
+#
+#       -DNETWORK
+#       Endable network related code
+#
+# -----------------------------------------------------------------------
+        
+# -----------------------------------------------------------------------
+# the weirdness in the object stuff is for the sake of overlays..
+# SOBJ      Overlayed objects w/o the ()s around them
+# LOBJ      Overlayed objects w/  the ()s around them
+# OBJS      All other object files
+#
+SOBJ  = aplic.obj config.obj cron.obj edit.obj files.obj infofile.obj info.obj\
+        log2.obj log3.obj misc2.obj msg3.obj net.obj sysop1.obj room2.obj\
+        xmodem.obj zipfile.obj 
+#       dragon.obj
+#
+LOBJ  = (aplic.obj + cron.obj) (config.obj) (edit.obj + msg3.obj) (files.obj)\
+        (infofile.obj + info.obj) (log2.obj) (log3.obj) (misc2.obj) (net.obj)\
+        (sysop1.obj) (room2.obj) (xmodem.obj + zipfile.obj) 
+#       dragon.obj
+#
+OBJS  = account.obj $(SERIAL).obj ctdl.obj format.obj grphall.obj\
+        input.obj library.obj log.obj misc.obj modem.obj\
+        msg.obj msg2.obj output.obj port.obj room.obj timedate.obj\
+        version.obj window.obj
+# -----------------------------------------------------------------------
+
+# -----------------------------------------------------------------------
+#   Linking information. LIBs and also the overlay object modules
+#
+TCLIBL = \tc\lib\EMU.LIB \tc\lib\MATHL.lib \tc\lib\CL.lib
+TCOBJ  = \tc\lib\c0l.obj
+#OVL    = ovl\linkovl.obj 
+OVL    = ovl\ovlstone.obj ovl\$$$$ODATA.OBJ
+# -----------------------------------------------------------------------
+
+# -----------------------------------------------------------------------
+#   Total list of objects for reverence only
+#
+#   aplic.obj       config.obj      cron.obj        edit.obj        files.obj
+#   infofile.obj    net.obj         sysop1.obj      room2.obj       xmodem.obj
+#   dragon.obj      account.obj     $(SERIAL).obj   ctdl.obj        format.obj
+#   grphall.obj     library.obj     log.obj         log2.obj        misc.obj
+#   modem.obj       msg.obj         msg2.obj        msg3.obj        port.obj
+#   room.obj        version.obj     window.obj      zipfile.obj     output.obj
+#   input.obj       timedate.obj
+# -----------------------------------------------------------------------
+
+# -----------------------------------------------------------------------
+#
+#   CTDL.EXE
+#
+#   Use the link with the $(OVL) for an overlayed version of the program
+#
+ctdl.exe: $(OBJS) $(SOBJ)
+        $(CC) -c $(CFLAGS) version.c
+        link $(OVL) $(TCOBJ) $(OBJS) $(LOBJ), ctdl.exe, ctdl.map,\
+           $(TCLIBL) $(LFLAGS);
+#        link $(TCOBJ) $(OBJS) $(SOBJ), fctdl.exe, ctdl.map,\
+#           $(TCLIBL) $(LFLAGS);
+# -----------------------------------------------------------------------
+
+# -----------------------------------------------------------------------
+# Some special stuff for c / asm files
+#
+$(SERIAL).obj:      $(SERIAL).asm
+    tasm $(SERIAL);
+# -----------------------------------------------------------------------
+
+# -----------------------------------------------------------------------
+# Backup makes an zip file of all the sources, headers, and the $(SERIAL).obj
+# file.
+#
+BACKUPDIR = \ts\bak
+backup:
+        del $(BACKUPDIR)\ctdlsrc.zip
+        pkzip -ex $(BACKUPDIR)\ctdlsrc *.asm *.h *.c *.bat makefile
+# -----------------------------------------------------------------------
+
+# -----------------------------------------------------------------------
+# Test the new version, i.e.:
+#  copy it to the test directory and execute it.
+# add -e if you want CTDL to reconfig.
+#
+test:
+    copy ctdl.exe \cit\ctdl.exe
+    copy whatsnew.doc \cit\help\whatsnew.hlp
+    cd \cit
+    ctdl.exe -d -c
+    cd \ts
+
+test2:
+    copy ctdl.exe \cit\ctdl.exe
+    copy whatsnew.doc \cit\help\whatsnew.hlp
+    cd \cit
+    ctdl.exe -d
+    cd \ts
+# -----------------------------------------------------------------------
+

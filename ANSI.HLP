@@ -1,0 +1,28 @@
+ 2HELP ANSI0
+  
+ ANSI suport is curently very limited. (fair warning)
+ 
+ ANSI can be turned on and off with the '~' key. If your terminal does not 
+support ANSI this will cause garbage to be displayed, at least, and can
+really confuse your terminal. What it will do is make room prompts inverse,
+message headers bold (if your system does bold, mostly only mono systems
+and DragCit in dial out mode do) and let you see diffrent colors in the
+messages that users have inserted using DragCit's special ESC sequences
+(the reason for these is for support of more terminals latter.)
+ 
+ The Escape sequence starts with a CTRL-A and then a number (currently 0-4).
+ These will give you diffrent special effects for your text.
+ 
+ What it does:                              What it looks like:
+
+ 0 -- NORMAL                                0Normal0
+ 1 -- BLINK                                 1Blinking0
+ 2 -- REVERSE (inverse)                     2Inverted0
+ 3 -- BOLD                                  3Boldface0
+ 4 -- UNDERLINE                             4Underline0
+ 
+ 0, 2, and 1 seem to work for everyone. 3 for the systems mentiond above, and 
+4 for mono remote systems and some mono local systems.
+ The BOLD and UNDERLINE can cause problems with Color displays.
+ 
+  

@@ -1,0 +1,66 @@
+ 2HELP MESSAGE0
+
+ 2--- General ---0
+
+While messages are being dispayed for you,  you can stop output by pressing
+"S", pause it by pressing "P" (any key to continue), skip to the next
+message by typing "N", skip to the next paragraph by pressing "J", toggle
+ANSI on and off by pressing "~", and reverse the message direction by typing
+"R".  The "P>ause J>ump N>ext S>top" header is a reminder that those work.
+The "P", "N", "J", "S", and "~" keys work any time DragCit is sending you
+information.
+
+ 2--- Reading Messages ---0
+
+ E    -- Read all exclusive messages.
+ F    -- Read all messages in forward order.
+ L    -- Read all limited access messages.
+ N    -- Read new messages.
+ O    -- Read old messages.
+ P    -- Read all public messages.
+ R    -- Read all messages in reverse order.
+
+ These commands read messages in the current room.  The commands 'F', 'N',
+'R' and 'O' can by typed at the room prompt. They can also be combined
+using .R options, for example:  ".RNR" (Read New Reverse) reads new messages
+in a reverse order.
+
+ 2--- Entering Messages ---0
+
+ E    -- Enter message.
+ .ELM -- Enter Limited Access Message.
+ .EE  -- Enter Exclusive message.
+ .EO  -- Enter Old message.
+
+ The Enter Message command is used to create messages.
+ The Enter Limited Access Message command also creates a message, but limits
+it to a particular group (you are prompted for a groupname, partial names are
+acceptable, and you must be a member of the group to create a message in it).
+ The Enter Exclusive message creates a private message.  Private messages can
+only be seen by the sender and recipient.
+ Enter Old message will recover any message you aborted, if you aborted the
+message the last time you entered a message during the current session.
+
+ Message entry is very simple.  You just type text (no limit on line length,
+maximum message size is usually no less that 2000 characters, and can be
+configured to be four times that, ask your local sysop).  To end your
+message, press the carriage return key twice.  This will place you in
+message edit mode.  There are several commands.  The most important are:
+Replace String, Find & Replace, Save Buffer, Abort Message, and Continue.
+These do the obvious things.  A "?" will get you a full list of commands.
+
+ 2--- Formatting ---0
+
+ Messages are formatted to the callers screen width.  As much text as possible
+will be collected on one line to send to the caller.  To defeat this, start
+a line with a space.  This is also useful for delineating paragraphs in
+your text.  Whenever you start a line with a space, that line will always
+start a new line, no matter where in the previous line the system is.
+Experiment in message entry using the Print command to see how this works.
+
+ 2--- Related Topics ---0
+
+ .h GROUP
+ .h ROOM
+ .h SPECIAL
+

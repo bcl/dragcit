@@ -1,0 +1,141 @@
+                           Dragon's Citadel
+
+                               Version
+
+      3333         11      11         0000        0000           ddd    
+    33333333      111     111       00000000    00000000          dd    
+   333    333    1111    1111      000    000  000    000         dd    
+   33      33      11      11      00    0 00  00    0 00         dd    
+           33      11      11      00    0 00  00    0 00         dd    
+       33333       11      11      00   0  00  00   0  00         dd    
+       33333       11      11      00   0  00  00   0  00     dddddd    
+           33      11      11      00  0   00  00  0   00    ddd  dd    
+           33      11      11      00  0   00  00  0   00  ddd    dd    
+           33      11      11      00 0    00  00 0    00  dd     dd    
+   33      33      11      11      00 0    00  00 0    00  dd     dd    
+   333    333      11      11      000    000  000    000  dd     dd    
+    33333333  ..   11      11   ..  00000000    00000000    dd    dd    
+      3333    .. 111111  111111 ..    0000        0000       ddddd ddd  
+
+
+        -------------------------------------------------------
+
+                           REQUIREMENTS:
+
+        *   Turbo C version 2.x
+        *   Microsoft Link          (for overlays)
+        *   OVL312.ZIP              ( "     "    )
+        *   NDMAKE                  (to use MAKEFILE)
+        *   DC31100D.ZIP            (For .CIT files and help files, ext.)
+        
+        -------------------------------------------------------
+  
+                          PUBLIC DOMAIN
+        
+        This full set of DragCit (Dragon's Citadel) BBS program
+        source code is released into the public domain. (this 
+        includes the NET.C module that was considered copyrighted.
+        I have released that to the public as well. Not like
+        it's great code or something :-)  )
+
+        -------------------------------------------------------
+
+                            COMPILING
+
+        1)      Copy the *.c and *.h files to a directory.
+
+        2)      Make a subdir by the name of 'OVL'.
+
+        3)      Unzip OVL312.ZIP into that directory, read its
+                docs. DragCit is set up to use the OVLSTONE
+                version, so you will have to make one. The 
+                SCULPT.C file has the $$ varible names in lower
+                case, you will need to make them uppercase, the
+                link used is case sensitive.
+
+        4)      Install NDMAKE, see its docs and readme.
+
+        5)      Put the MicroSoft overlay linker into your path 
+                as LINK.EXE. It comes with most of their languages.
+
+        6)      Type MAKE. If it blows up, you screwed up.
+
+        -------------------------------------------------------
+
+                               HELP!
+
+              The author is avalible at Honalee. Thats me. 
+
+                          Dragon @ Honalee
+                           (206) 546-0994
+                              3/12/24
+
+              This version of the software is not perfect in
+        every way. There will be bugs. While I have had a team
+        of alpha testers abuse this thing to the best of their
+        ability, it is a large peice of software. Total up the 
+        K of source code if you don't belive me. This brings 
+        up:
+
+        -------------------------------------------------------
+
+                            NO WARRANTY
+
+              No warrantys expressed or implyed. You get this 
+        source as it. Take it or leave it.
+
+        -------------------------------------------------------
+
+                            MODIFICATION
+
+              If you modify this souce and decide to distribute
+        it, PLEASE make note of the fact that it is not orignal
+        dragcit source code. I do not want to get calls about 
+        "why does the program do this or that" when it is not 
+        even something I did. Take pride in your work and document
+        the changes, PLEASE!
+
+        -------------------------------------------------------
+
+                        STATE OF THE SOURCE
+
+              This release of the program was pushed forward in
+        time by about a month. This was beacuse of changes in the
+        other major program on the network, TurboCit. There is 
+        some horible code out there, so look out! This program has
+        passed through many generations of programmers. Known to have
+        working on this are:
+
+                CRT, father of Citadel
+                David Mitchel
+                Bruce King
+                Hue Jr.
+                The Gremlin
+                John
+                The Dragon      (me)
+
+              Many others have had their hand in the pot as well. 
+               
+        -------------------------------------------------------
+  
+                           PROBLEM AREAS
+
+              Carrier detect code does strange things when someone
+        is logged into the console. The cobination of flags and other
+        modem related varibles makes this behavior hard to trace. 
+        I would recoment rewriting the modem level code. That is 
+        what I plan on doing.
+
+
+        -------------------------------------------------------
+
+                           GOOD LUCK!
+
+              and may the source be with you, alwase.
+
+
+
+                                            The Dragon,
+                                            Sysop of Honalee
+                                            Author of DragCit
+

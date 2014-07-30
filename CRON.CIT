@@ -1,0 +1,37 @@
+/**************************************************************************/
+/* Citadel cron file                                                      */
+/**************************************************************************/
+/*                                                                        */
+/*  A cron entry will be executed when the BBS has the time. You can      */
+/* define when is a valid time to do it.                                  */
+/*  After do you tell it a) what to do, b) an argument. SHELL_1 will      */
+/* execute a shell with the command in the quotes. (note that a '@' as    */
+/* the forst char will casue citadel not to clear the screen)             */
+/*  NETWORK will cause the bbs to try to call out to another node.        */
+/*  A character before the # in each line of an entry will cause it to be */
+/* discarded.                                                             */
+/*  #DAYS is the days it can be executed.                                 */
+/*  #HOURS is the hours it can be executed.                               */
+/*  #REDO_TIME is the minutes it has to wait before it can redo a command */
+/*    (if sucessful)                                                      */
+/*  #RETRY_TIME is the minutes before it will retry after a failed attempt*/
+/*                                                                        */
+/*  (NOTE: putting a space before the # will remark that entry out)       */
+/**************************************************************************/
+  
+ /* run the program 'test' from the aplic dir sometime between 12 - 3 monday */
+ /* Dont do it again for at least 8 hours */
+ #DO             SHELL_1        "test"
+ #HOURS          0 1 2 3 
+ #DAYS           mon
+ #REDO_TIME      480
+ #RETRY_TIME     0
+
+ /* network with C' Hackers Forum any time, any day */
+ /* Dont do it again for at least 8 hours */
+ #DO             NETWORK         "C' Hackers Forum"
+ #HOURS          ANY
+ #DAYS           mon tue wed thu fri sat sun
+ #REDO_TIME      480
+ #RETRY_TIME     0
+ 

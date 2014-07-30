@@ -1,0 +1,49 @@
+/************************************************************************/
+/*  GRPDATA.cit                                                         */
+/*      this is the group by group configuration file for time          */
+/*      accounting under DragCit 3.1x.xx                                */
+/*      See ACCOUNT.doc for more information about accounting.          */
+/************************************************************************/
+/* You MUST have an entry for your null group.                          */
+#group              "null"   /* Group name in quotes                    */
+#days               any      
+                             /* Days this group can log in              */
+#hours              any      
+                             /* Hours this group can log in             */
+#special                     
+                             /* No free hours to null group             */
+#day_inc            15       /* Add 15 per day                          */
+#max_bal            15       /* And let it add up to a max of 15 per day*/
+#dl_mult           -1        /* Charge full time for downloads          */
+#ul_mult            0        /* Charge nothing for uploads              */
+#priority           1        /* This group isn't too important.         */
+
+/* Your verified users get better time..                                */
+#group           "verified"  /* Group name in quotes                    */
+#days               any      
+                             /* Days this group can log in              */
+#hours              any      
+                             /* Hours this group can log in             */
+#special          0 1 2 3    
+                             /* Midnight till 3:59:59 is free           */
+#day_inc            60       /* Add 60 minutes per day                  */
+#max_bal            90       /* And let it add up to a max of 90 per day*/
+#dl_mult           -1        /* Charge full time for downloads          */
+#ul_mult            0        /* Charge nothing for uploads              */
+#priority           5        /* This group is semi-important            */
+
+/* Your "special" users, well trusted.                                  */
+#group           "Friends"   /* Group name in quotes                    */
+#days               any      
+                             /* Days this group can log in              */
+#hours              any      
+                             /* Hours this group can log in             */
+#special      0 1 2 3 4 5 6  
+                             /* Midnight till 6:59:59 is free           */
+#day_inc            60       /* Add 60 minutes per day                  */
+#max_bal            90       /* And let it add up to a max of 90 per day*/
+#dl_mult            0        /* Charge nothing got downloads            */
+#ul_mult          -.5        /* Give some extra time for uploading      */
+#priority          20        /* This group is the most important        */
+
+

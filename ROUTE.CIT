@@ -1,0 +1,72 @@
+/************************************************************************/
+/* An alias is used as an abrevation to a nodes name for routing. So you*/
+/* could type '.EEThe Dragon @ DC' in stead of '.EEThe Dragon @ Dragon's*/
+/* Caverns'                                                             */
+/* The format is: #ALIAS  abrevation  full_nodename                     */
+/************************************************************************/
+
+#ALIAS "chf"            "C' Hackers Forum"
+#ALIAS "hak"            "C' Hackers Forum"
+
+#ALIAS "8th"            "[The 8th Dimension]"
+
+#ALIAS "51L"            "Challenger 51-L"
+#ALIAS "c51"            "Challenger 51-L"
+
+#ALIAS "HON"            "Honalee"
+#ALIAS "H"              "Honalee"
+
+#ALIAS "sc"             "Sirius Cybernetics"
+#ALIAS "src"            "Sirius Cybernetics"
+
+#ALIAS "tlc"            "The Log Cabin"
+
+#ALIAS "tfd"            "The Fifth Dimension"
+#ALIAS "5th"            "The Fifth Dimension"
+
+#ALIAS "TLI"            "The Lost Island"
+
+#ALIAS "PNX"            "Pinxit"
+
+#ALIAS "OME"            "Omega"
+
+#ALIAS "TFP"            "The Frozen Perch"
+
+#ALIAS "MPC"            "Midnight PC"
+
+#ALIAS "mal"            "Memory Alpha"
+
+#ALIAS "HC"             "HarDCore BBS"
+
+#ALIAS "LB"             "Lightning BBS"
+
+#ALIAS "TO"             "The Oasis"
+
+#ALIAS "AOA"            "Age Of Aquarius"
+
+/************************************************************************/
+/*  Routes tell your system where to send things tring to reach systems */
+/* that you are not connected with directly.                            */
+/*  #ROUTE  system  send_vila                                           */
+/************************************************************************/
+
+#ROUTE  "Challenger 51-L"       "C' Hackers Forum"
+
+#ROUTE  "The Lost Island"       "C' Hackers Forum"
+
+#ROUTE  "HarDCore BBS"          "C' Hackers Forum"
+
+#ROUTE  "Lightning BBS"         "C' Hackers Forum"
+
+#ROUTE  "The Oasis"             "C' Hackers Forum"
+
+#ROUTE  "Pinxit"                "C' Hackers Forum"
+
+#ROUTE  "Omega"                 "C' Hackers Forum"
+
+#ROUTE  "Big Bang Burger Bar"   "C' Hackers Forum"
+
+#ROUTE  "Age Of Aquarius"       "C' Hackers Forum"
+
+#ROUTE  "Memory Alpha"          "C' Hackers Forum"
+

@@ -1,0 +1,37 @@
+/************************************************************************/
+/* exteral protocols                                                    */
+/* Pass the following:                                                  */        
+/*  Protocol name (first letter must be unique)                         */
+/*  Batch (1=yes, 0=no)                                                 */
+/*  Block size  (0 if you dont know or it is varible)                   */
+/*  Recive command, either a batch file or a direct call w/ arguments   */
+/*      using %a you get the applic path, %p gives you the port, %s     */
+/*      gives you the baud rate and %f is the file(s)                   */
+/*  Send command, see recive command                                    */
+/************************************************************************/
+#PROTOCOL "CRC Xmodem"   0 128  "%a\\dsz port %p rc %f"    "%a\\dsz port %p sx %f"
+#PROTOCOL "Xmodem"       0 128  "%a\\dsz port %p rx %f"    "%a\\dsz port %p sx %f"
+#PROTOCOL "Ymodem-Batch" 1 1024 "%a\\dsz port %p rb %f"    "%a\\dsz port %p sb %f"
+#PROTOCOL "Zmodem"       1 0    "%a\\dsz port %p rz %f"    "%a\\dsz port %p sz %f"
+#PROTOCOL "1K-Xmodem"    0 1024 "%a\\dsz port %p rx -k %f" "%a\\dsz port %p sx -k %f"
+
+/************************************************************************/
+/* external editors                                                     */
+/* Name of editor (first character must be diffrent)                    */
+/* Console only (= 1)                                                   */
+/* name of batch file (%f = filename to edit)                           */
+/************************************************************************/
+#EDITOR     "QEdit (local)"     1       "@q %f"
+
+/************************************************************************/
+/* Unaccessabe directorys                                               */
+/* Anything specified here can not be created as a drectory from remote */
+/* any attempt to do so from remote causes the offending sysop's account*/
+/* to be desysoped, deaided, and unverified. A message is posted in the */
+/* aide room to let you know what happened.                             */
+/* Un*x styal wild cards can be used. ( '[' and ']', more than one '*', */
+/*   ext.)                                                              */
+/************************************************************************/
+#DIRECTORY  D:*             /* can not make any directorys on D:        */
+#DIRECTORY  C:\source       /* can not path to c:\source                */
+

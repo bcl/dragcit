@@ -1,0 +1,123 @@
+
+/************************************************************************/ 
+/*      NODE.CIT                                                        */
+/*                                                                      */
+/*  This file contains information needed by other your system to       */
+/*  network. Examples are provided.                                     */
+/* -------------------------------------------------------------------- */
+/*  #NODE           name        region                                  */
+/*      Name of the BBS you network with, must be the same as its       */
+/*      nodename and as it is in your userlog.                          */
+/*                                                                      */
+/*  #PHONE          phone                                               */
+/*      The phone number to dial for that system. It will be appended   */
+/*      to the #DIAL_PREF (in config.cit) to make a dial string.        */
+/*                                                                      */
+/*  #BAUD           baud                                                */
+/*      Baud to call other system at (300, 1200, 2400, 4800, 9600)      */
+/*                                                                      */
+/*  #DIAL_TIMEOUT   timeout                                             */
+/*      Time to wait during dial of other system.                       */
+/*                                                                      */
+/*  #REDIAL         unused                                              */
+/*      Unused at this time...                                          */
+/*                                                                      */
+/*  #LOGIN          special                                             */
+/*      This is a string of commands. The valid commands are:           */
+/*      W " "       wait for whatever is in the quotes                  */
+/*      S " "       Send whatever is in the quotes                      */
+/*      ! " "       Shell out and run whatever is in the quotes         */
+/*      P #         pause x seconds                                     */
+/*      For example: W " " S "S" W "als:" S "initials;password\r"       */
+/*      Would Wait for a space, send an 'S', wait for "als:", send      */
+/*          "initials;password\r"                                       */
+/*                                                                      */
+/*  #WAIT_TIMEOUT   timeout                                             */
+/*      The time to wait for a string in #login                         */
+/*                                                                      */
+/*  #PROTOCOL       protocol                                            */
+/*      Name of the external protocol you wish to use for networking    */
+/*      (MUST BE BATCH)                                                 */
+/*                                                                      */
+/*  #MAIL_TMP       mailfile                                            */
+/*      Name of the mail file for this system                           */
+/*      (must be diffrent for each system)                              */
+/*                                                                      */
+/*  #EXPIRE         days                                                */
+/*      Number of days untill a message expires coming over the net     */
+/*      for this system                                                 */
+/*                                                                      */
+/*  #GROUP          here        there                                   */
+/*      Names of shared groups on your system (here) and the name for   */
+/*      in on the other system (there).                                 */
+/*      (MAY BE MORE THAN ONE OF THESE)                                 */
+/*                                                                      */
+/*  #ROOM           here        there                                   */
+/*      Names of shared rooms on your system (here) and the name for    */
+/*      in on the other system (there).                                 */
+/*      (MAY BE MORE THAN ONE OF THESE)                                 */
+/*                                                                      */
+/************************************************************************/
+
+/************************************************************************/
+#NODE           "[The 8th Dimension]"   "Seattle"
+#PHONE          "488-1290"
+#BAUD           2400
+#DIAL_TIMEOUT   20
+#REDIAL         3
+#LOGIN          W " " S "S" W "als:" S "initials;password\r"
+#WAIT_TIMEOUT   30
+#PROTOCOL       "Zmodem"
+#MAIL_TMP       "mail\\mail.8th"
+#EXPIRE         30
+
+#GROUP          "Seattle"               "Seattle"
+#GROUP          "DragCit Sysops"        "DragCit SysOps"
+#GROUP          "Source Group"          "Source Code"
+
+#ROOM           "Network Admin"         "Networking"
+#ROOM           "Alpha Testers"         "Alpha Testers"
+#ROOM           "Bug Reports"           "Bug Reports"
+#ROOM           "Suggestions"           "Suggestions"        
+#ROOM           "Sysop Forum"           "Sysop Forum"
+#ROOM           "WAN Administration"    "WAN Admin"
+
+#ROOM           "Other Boards"          "Other Dimensions"
+#ROOM           "General"               "Topic Drift"
+
+#ROOM           "BBS Development"       "BBS Development"
+#ROOM           "DragCit Q&A"           "Citadel Utils & Q&A"
+#ROOM           "Source Code"           "Source Code"
+#ROOM           "C Forum"               "C Forum"
+#ROOM           "Programming"           "Code Writing"
+#ROOM           "MS/DOS Forum"          "MS/Dos"
+
+/************************************************************************/                                
+#NODE           "C' Hackers Forum"      "Seattle"
+#PHONE          "782-6669"
+#BAUD           2400
+#DIAL_TIMEOUT   30
+#REDIAL         3
+#LOGIN          W "als:" S "password;initials\r"
+#WAIT_TIMEOUT   25
+#PROTOCOL       "Zmodem"
+#MAIL_TMP       "mail\\mail.chf"
+#EXPIRE         15
+
+#GROUP          "Seattle"               "Seattle"
+#GROUP          "DragCit Sysops"        "Citadel SysOps"
+
+#ROOM           "Network Admin"         "Network Admin"   
+#ROOM           "Alpha Testers"         "Alpha Testers"   
+#ROOM           "Bug Reports"           "Bug Reports"
+#ROOM           "Suggestions"           "Suggestions"        
+#ROOM           "BBS Development"       "BBS Development"
+#ROOM           "Other Boards"          "Other Boards"
+#ROOM           "DragCit Q&A"           "DragCit Q & A"         
+#ROOM           "MS/DOS Forum"          "IBM/MS-DOS"
+#ROOM           "C Forum"               "C Discussion"
+#ROOM           "Programming"           "Programming"
+#ROOM           "General"               "Discussion"
+#ROOM           "Sysop Forum"           "Sysop Forum"
+#ROOM           "WAN Administration"    "WAN Administration"
+

@@ -1,0 +1,155 @@
+ 
+ 2HELP SYSOP0
+ 
+ 2--- General ---0
+
+ Citadel allows someone at remote to have full power over Citadel.
+The following describes which sysop commands are available.
+
+
+ 2--- File linked messages --0
+
+ .E*M  -- Enter Filelinked Message.
+ .EE*M -- Enter Exclusive Filelinked Message.
+ .EL*M -- Enter Limited Access Filelinked Message.
+
+ The Sysop only can enter Filelinked messages. Either at console or remote.
+You must specifly the entire DOS path including drive. No wildcard file
+names are allowed.
+
+ 2--- Sysop menu commands ---0
+
+ The sysop menu can be accessed by remote by hitting ".S", it
+can also be accessed by hitting "F6" at console.
+                        
+ "A"  -- Abort
+ Aborts sysop functions.
+
+ "D" -- Date
+ Changes system date and time.
+
+ "E" -- Enter/update EXTERNAL.CIT and GRPDATA.CIT files
+ Allows addition of new accounting info and protocols without taking the
+whole BBS down.
+
+ "F" -- Aide Function
+ Allows sysop access to aide functions.
+
+ "G" -- Group special
+ Group special functions. The following are available.
+  
+ "GK" -- Group special: Kill group
+ Kill a group.
+
+ "GN" -- Group special: New group
+ Creates a new group.
+
+ "GG" -- Group special: Global group membership.
+ Adds all users to a group.
+
+ "GU" -- Group special: Global User group membership.
+ Adds user to all groups.
+
+ "GR" -- Group special: Rename group
+ Renames a group.
+
+ "H" -- Hallway special
+ Hallway special functions. The following are available.
+
+ "HF" -- Hallway special: Force
+ Forces access to a hallway.
+
+ "HG" -- Hallway special: Global hallway.
+ Include, exclude all rooms in a hall.
+
+ "HK" -- Hallway special: Kill
+ Kills current hallway, only if hall has no rooms.
+
+ "HL" -- Hallway special: List
+ Lists all hallways on system.
+
+ "HN" -- Hallway special: New
+ Creates a new hallway.
+
+ "HR" -- Hallway special: Rename
+ Renames a hallway.
+
+ "K"  -- Kill account.
+ Kills a userlog entry.
+
+ "M"  -- Mass delete.
+ Kills all messages from a user.  Deleted messages end up in Dump>
+
+ "N"  -- Newuer Verify
+ Scrolls through all the unverified users, and asks you if you want to
+verifiy them.  If you do not verify them, DragCit will offer to kill the
+account.
+
+ "O" -- Off hook.
+ Takes modem off hook. Works only in console mode.
+
+ "R" -- Reset file info.
+ Rarely used, clears unused entries from fileinfo.cit file in current
+directory room.
+
+ "S" -- Show user.
+ Displays a user's configuration.
+
+ "U" -- Userlog edit.
+ Changes a user's setup.
+
+ "V" -- View help file.
+ Shows this text file.
+
+ "X" -- Exit to Ms-dos.
+ This is the proper way of exiting Citadel.
+
+ "Z" -- Zap empty rooms.
+ Deletes empty rooms.
+
+ "!" -- Shell escape
+ Allows person at console to drop into dos while DragCit is running.  Type
+'Exit' to return to Citadel. Only works in console mode.
+
+ "@" -- Super Shell Escape
+ Allows someone at console to drop into dos while DragCit is running. Type
+'Exit' to return to DragCit. Saves parts of DragCit to disk, and frees more
+memory for the shell. Only works in console mode.
+
+ "#" -- Read by message #
+ Displays message according to # if its viewable.
+
+ "*" -- Unlink with wildcards.
+ Allows the sysop to erease files and use full UNIX style wildcards.
+
+ 2--- Console keys ---0
+
+ These keys work only on the local console.
+
+ Alt-P
+ Toggle printer on/off. If you have specified a file other than PRN for the
+printer it will go there.
+
+ Alt-T
+ Toggle problem user bit of user logged in.
+
+ Alt-X
+ Exit to DOS. Same as "X".
+
+ Alt-F6
+ Toggles current logged in user's Aide status.
+
+ Shift-F6
+ Toggles currently logged in user's SysOp status.
+
+ Alt-B
+ Turns the PsYcHo cHiCkEn eFfEcT on or off.  Basically to annoy users.
+
+ Alt-C
+ Pulls a user into Chat mode like F8.
+
+ 2--- Related Topics ---0
+
+ .h AIDE
+
+
