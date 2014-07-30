@@ -7,7 +7,7 @@ The Citadel Archive - Dragon's Citadel
 * Platform: MS-DOS
 * Language: Microsoft C and (later) Turbo C
 * Derived from: [Citadel (by Gremlin)](https://github.com/dylancarlson/gremcit)
-* Ancestor of: ACit](../ACit/), Captain's Citadel, Maven's Citadel, Elegia, Co-op Citadel, FrogCit, TurboCit, TwitCit
+* Ancestor of: [ACit](https://github.com/dylancarlson/acit), Captain's Citadel, Maven's Citadel, Elegia, Co-op Citadel, FrogCit, TurboCit, TwitCit
 * See also: Titan
 
 Starting with the Gremlin's code, Peter added many features including
